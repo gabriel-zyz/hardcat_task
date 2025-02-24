@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -29,10 +28,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-
 import androidx.navigation.NavController
 
-
+/*Function that represents the AddTaskScreen*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddTaskScreen(navController: NavController, taskViewModel: TaskViewModel) {
@@ -55,9 +53,9 @@ fun AddTaskScreen(navController: NavController, taskViewModel: TaskViewModel) {
     ){
         paddingValues ->
         Column(modifier = Modifier.fillMaxSize().padding(paddingValues).padding(16.dp)) {
-
             var taskDescription by remember { mutableStateOf("") }
 
+            //Input box for entering task description
             TextField(
                 value = taskDescription,
                 onValueChange = { taskDescription = it },
@@ -67,6 +65,7 @@ fun AddTaskScreen(navController: NavController, taskViewModel: TaskViewModel) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp,Alignment.CenterHorizontally), modifier = Modifier.fillMaxSize()) {
+                //Add Task Button
                 Button(onClick = {
                     if (taskDescription.isBlank()) {
                         Toast.makeText(context, "Task description cannot be empty!", Toast.LENGTH_SHORT).show()
@@ -79,6 +78,8 @@ fun AddTaskScreen(navController: NavController, taskViewModel: TaskViewModel) {
                 ) {
                     Text("Add")
                 }
+
+                //Cancel Button
                 Button(onClick = {navController.popBackStack()},
                     modifier = Modifier.weight(1f)
                 ) {
@@ -87,8 +88,4 @@ fun AddTaskScreen(navController: NavController, taskViewModel: TaskViewModel) {
             }
         }
     }
-
-
-
-
 }
