@@ -1,4 +1,4 @@
-package com.example.hardcat_task
+package com.example.hardcat_task.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.hardcat_task.data.Task
+import com.example.hardcat_task.data.TaskViewModel
 
 /*Function that represents the start screen TaskScreen*/
 @OptIn(ExperimentalMaterial3Api::class)

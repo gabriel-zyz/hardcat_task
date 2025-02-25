@@ -1,4 +1,4 @@
-package com.example.hardcat_task
+package com.example.hardcat_task.data
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
@@ -6,7 +6,12 @@ import androidx.lifecycle.ViewModel
 /*View model that manage the task data*/
 class TaskViewModel: ViewModel() {
     private var counter = 0
-    var tasks = mutableStateListOf<Task>()
+
+    var tasks = mutableStateListOf(
+        Task(counter++, "Task 1"),
+        Task(counter++, "Task 2"),
+        Task(counter++, "Task 3")
+    )
 
     /*Function that handles the adding of task*/
     fun addTask(description: String) {

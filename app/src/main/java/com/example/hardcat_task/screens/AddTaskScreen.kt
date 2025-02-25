@@ -1,4 +1,4 @@
-package com.example.hardcat_task
+package com.example.hardcat_task.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -29,6 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.hardcat_task.data.TaskViewModel
 
 /*Function that represents the AddTaskScreen*/
 @OptIn(ExperimentalMaterial3Api::class)

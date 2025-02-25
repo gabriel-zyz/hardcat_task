@@ -1,4 +1,4 @@
-package com.example.hardcat_task
+package com.example.hardcat_task.data
 
 /*Data class that defines the fields of task*/
 data class Task(
